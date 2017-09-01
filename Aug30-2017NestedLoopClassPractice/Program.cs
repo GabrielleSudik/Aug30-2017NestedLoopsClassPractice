@@ -117,7 +117,7 @@ namespace Aug30_2017NestedLoopClassPractice
             {
                 if (digit % 3 == 0)
                 {
-                    Console.Write(" " + digit);
+                    Console.Write(digit+ " ");
                 }
 
                 else
@@ -127,22 +127,38 @@ namespace Aug30_2017NestedLoopClassPractice
             }
 
             //break the three-digit lock.
-            //you get five tries per digit
+            //you get eight tries per digit
 
-            Console.WriteLine("\nYou need to open the lock. It's got three numbers between 0 and 35. You get five tries each.");
+            Console.WriteLine("\nYou need to open the lock. It's got three numbers between 1 and 100. You get eight tries each.");
 
-            int correct1 = 30;
+            int correct1 = 8;
             int correct2 = 8;
-            int correct3 = 25;
+            int correct3 = 74;
 
             int guess1 = 0;
             int guess2 = 0;
             int guess3 = 0;
 
-            for (int i = 5; i > 0; i--)
+            for (int i = 8; i > 0; i--)
             {
                 Console.WriteLine("What's your guess for the first number?");
                 guess1 = int.Parse(Console.ReadLine());
+                
+              if (guess1 < correct1)
+                {
+                    Console.WriteLine("Nope. Guess a larger number.");
+                }
+
+                if (guess1 > correct1)
+                {
+                    Console.WriteLine("Nope. Guess a smaller number.");
+                }
+
+                if (guess1 == correct1)
+                {
+                    Console.WriteLine("You got the first number right!");
+                    break;
+                }
             }
 
 
