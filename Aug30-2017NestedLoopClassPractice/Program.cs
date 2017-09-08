@@ -139,12 +139,12 @@ namespace Aug30_2017NestedLoopClassPractice
             int guess2 = 0;
             int guess3 = 0;
 
-            for (int i = 8; i > 0; i--)
+            for (int i = 7; i > 0; i--)
             {
-                Console.WriteLine("What's your guess for the first number?");
+                Console.WriteLine("\nWhat's your guess for the first number?");
                 guess1 = int.Parse(Console.ReadLine());
                 
-              if (guess1 < correct1)
+                if (guess1 < correct1)
                 {
                     Console.WriteLine("Nope. Guess a larger number.");
                 }
@@ -156,12 +156,105 @@ namespace Aug30_2017NestedLoopClassPractice
 
                 if (guess1 == correct1)
                 {
-                    Console.WriteLine("You got the first number right!");
+                    //Console.WriteLine("You got the first number right!");
                     break;
                 }
             }
 
+            if (guess1 < correct1 || guess1 > correct1)
+            {
+                Console.WriteLine("What's your final guess for the first number?");
+                guess1 = int.Parse(Console.ReadLine());
+            }
+            else
+            {
+                return;
+            }
 
+            if (guess1 < correct1 || guess1 > correct1) //this counts as the 8th guess if needed
+            {
+                Console.WriteLine("Sorry, you didn't guess the correct first number.");
+            }
+
+            else
+            {
+                Console.WriteLine("You got the first number right!");
+            }
+
+            for (int i = 8; i > 0; i--)
+            {
+                Console.WriteLine("\nWhat's your guess for the second number?");
+                guess2 = int.Parse(Console.ReadLine());
+
+                if (guess2 < correct2)
+                {
+                    Console.WriteLine("Nope. Guess a larger number.");
+                }
+
+                if (guess2 > correct2)
+                {
+                    Console.WriteLine("Nope. Guess a smaller number.");
+                }
+
+                if (guess2 == correct2)
+                {
+                    //Console.WriteLine("You got the second number right!");
+                    break;
+                }
+            }
+
+            if (guess1 < correct2 || guess2 > correct1) //this counts as the 8th guess if needed
+            {
+                Console.WriteLine("Oops, you didn't guess the correct second number.");
+            }
+
+            else
+            {
+                Console.WriteLine("You got the second number right!");
+            }
+
+            for (int i = 8; i > 0; i--)
+            {
+                Console.WriteLine("\nWhat's your guess for the third number?");
+                guess3 = int.Parse(Console.ReadLine());
+
+                if (guess3 < correct3)
+                {
+                    Console.WriteLine("Nope. Guess a larger number.");
+                }
+
+                if (guess3 > correct3)
+                {
+                    Console.WriteLine("Nope. Guess a smaller number.");
+                }
+
+                if (guess3 == correct3)
+                {
+                    //Console.WriteLine("You got the third number right!");
+                    break;
+                }
+            }
+
+            if (guess3 < correct3 || guess3 > correct3) //this counts as the 8th guess if needed
+            {
+                Console.WriteLine("Oops, you didn't guess the correct third number.");
+            }
+
+            else
+            {
+                Console.WriteLine("You got the third number right!");
+            }
+
+            if (guess1 == correct1 && guess2 == correct2 && guess3 == correct3)
+            {
+                Console.WriteLine("\nCongrats! You cracked the safe.");
+            }
+            else
+            {
+                Console.WriteLine("\nSorry, you didn't crack the safe. You're still poor.");
+            }
+
+            //you're still working on this, trying to get the 8-picks just right (it works, but imperfect)
 
             Console.ReadLine();
         }
